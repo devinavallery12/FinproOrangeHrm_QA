@@ -19,7 +19,6 @@ describe('fungsional login', () =>{
         //intercept dulu untuk men-trigger request ke API
         cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/dashboard/employees/action-summary').as('actionsummary')
 
-        
         //Click Button
         loginPage_OrangeHrm.Click_Btn_Login()
 
@@ -42,7 +41,7 @@ describe('fungsional login', () =>{
         loginPage_OrangeHrm.Null_Password()
 
         //intercept
-        cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/core/i18n/messages').as('messagesrequired')
+        //cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/core/i18n/messages').as('messagesrequired')
 
         //cklick button login
         loginPage_OrangeHrm.Click_Btn_Login()
