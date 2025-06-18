@@ -40,20 +40,8 @@ describe('fungsional login', () =>{
         //tidak menginputkan password
         loginPage_OrangeHrm.Null_Password()
 
-        //intercept
-        //cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/core/i18n/messages').as('messagesrequired')
-
         //cklick button login
         loginPage_OrangeHrm.Click_Btn_Login()
-
-        //menunggu sampai request login selesai, tidak bisa dieksekusi krna endpoint web tak memberi respon lain
-        //cy.wait('@messagesrequired').then((interception) => {
-            // Lihat detail response-nya
-           // cy.log('Status code:', interception.response.statusCode);
-            //expect(interception.response.statusCode).to.eq(304); // Atau sesuai respons
-          //})
-      
-        //cy.wait('@messagesrequired' , {timeout: 10000}).its('response.statusCode').should('eq', 304)
 
         //assert error login
         loginPage_OrangeHrm.verifyusernameandpassswordKosong()
