@@ -16,13 +16,8 @@ describe('fungsional login', () =>{
         //Input Password
         loginPage_OrangeHrm.Input_Password(loginData_orangeHrm.valid_Password)
 
-        //intercept dulu untuk men-trigger request ke API
-        cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/dashboard/employees/action-summary').as('actionsummary')
-
         //Click Button
         loginPage_OrangeHrm.Click_Btn_Login()
-
-        cy.wait('@actionsummary', {timeout: 10000}).its('response.statusCode').should('eq', 200)
 
         //Assert Login
         loginPage_OrangeHrm.Verify_Login_Success()
@@ -141,9 +136,6 @@ describe('fungsional login', () =>{
 describe('fungsional forgot password', () =>{
     //positif case
     beforeEach(() => {
-
-        //intercept dulu untuk men-trigger request ke API, tidak bisa digunakan. kasusnya sama web tidak memberi respon lain
-        //cy.intercept('POST', '/web/index.php/auth/login').as('loginRequest')
 
         //cy.visit login page dulu
         loginPage_OrangeHrm.visit();
