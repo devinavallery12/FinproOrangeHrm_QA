@@ -1,11 +1,18 @@
 //<Reference types="cypress"/>
 //error juga
-describe('API tesing Reqressin', () => {
-    it('POST API Registsuccessful tesing', () => {
-        cy.request('POST', 'https://reqres.in/api/register')
-        .then((Response) => {
-            expect(Response.status).to.eq(200)
-            expect(Response.body).to.not.be.null
-        })
-    })
-})
+describe('API testing Reqres.in', () => {
+    it('POST API Register Successful testing', () => {
+        cy.request({
+            method: 'POST',
+            url: 'https://reqres.in/api/register',
+            body: {
+                email: "eve.holt@reqres.in",
+                password: "pistol"
+            }
+        }).then((response) => {
+            expect(response.status).to.eq(200)
+            expect(response.body).to.have.property('id', 4)
+            expect(response.body).to.have.property('token')
+        });
+    });
+});

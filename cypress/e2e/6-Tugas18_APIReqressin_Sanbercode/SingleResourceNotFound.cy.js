@@ -1,5 +1,5 @@
 //<Reference types="cypress"/>
-//error
+//error juga pdh status code nya udh disesuaikan dn sama di postman
 describe('API tesing Reqressin', () => {
     it('GET API singleresourcenotfound tesing', () => {
         cy.request('GET', 'https://reqres.in/api/unknown/23')
