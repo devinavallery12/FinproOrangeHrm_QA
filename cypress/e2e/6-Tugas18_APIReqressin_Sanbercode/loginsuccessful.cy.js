@@ -3,19 +3,18 @@
 const headers = { 'x-api-key': 'reqres-free-v1' }
 
 describe('API testing', () => {
-  it('POST register successful', () => {
+  it('POST Login successful', () => {
     cy.request({
       method: 'POST',
-      url: 'https://reqres.in/api/register',
+      url: 'https://reqres.in/api/login',
       headers: headers,
       failOnStatusCode: false, 
       body: {
         email: 'eve.holt@reqres.in',
-        password: 'pistol',
+        password: 'cityslicka',
       }
     }).then((response) => {
       expect(response.status).to.eq(200)
-      expect(response.body).to.have.property('id')//id dinamis sifatnya
       expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4')
     })
   })

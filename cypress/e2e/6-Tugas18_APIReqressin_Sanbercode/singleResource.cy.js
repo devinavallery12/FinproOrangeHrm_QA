@@ -1,4 +1,4 @@
-//<Reference types="cypress"/>
+/// <reference types="cypress"/>
 describe('API tesing Reqressin', () => {
     it('GET API singleresource tesing', () => {
         cy.request('GET', 'https://reqres.in/api/unknown/2')

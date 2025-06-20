@@ -3,23 +3,22 @@
 const headers = { 'x-api-key': 'reqres-free-v1' }
 
 describe('API tesing Reqressin', () => {
-    it('POST API create tesing', () => {
+    it('PATCH API update tesing', () => {
         cy.request({
-            method: 'POST',
-            url: 'https://reqres.in/api/users',
+            method: 'PATCH',
+            url: 'https://reqres.in/api/users/2',
             headers: headers,
             failOnStatusCode: false,
             body: {
                 name: 'morpheus',
-                job: 'leader',
+                job: 'zion resident',
             }
         })
         .then((response) => {
             expect(response.body).to.have.property('name', 'morpheus')
-            expect(response.body).to.have.property('job', 'leader')
-            expect(response.body).to.have.property('id') // generated secara dinamis
-            expect(response.body).to.have.property('createdAt')
-            expect(response.status).to.eq(201)
+            expect(response.body).to.have.property('job', 'zion resident')
+            expect(response.body).to.have.property('updatedAt')
+            expect(response.status).to.eq(200)
             expect(response.body).to.not.be.null
         })
     })

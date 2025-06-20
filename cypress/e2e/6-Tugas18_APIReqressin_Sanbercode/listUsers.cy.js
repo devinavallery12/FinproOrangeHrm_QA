@@ -1,4 +1,4 @@
-//<Reference types="cypress"/>
+/// <reference types="cypress"/>
 
 describe('API tesing Reqressin', () => {
     it('Get API listUsers tesing', () => {
