@@ -1,6 +1,7 @@
 import loginData_orangeHrm from "../../fixtures/loginData_OrangeHrm.json"
 
 class forgotPage{
+    
     visit() {
         cy.visit('/web/index.php/auth/requestPasswordResetCode')//buka halaman forgot password
     }
